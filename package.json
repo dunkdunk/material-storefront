@@ -9,6 +9,7 @@
   "author": "dunkle",
   "license": "ISC",
   "dependencies": {
-    "material-components-web": "^0.11.1"
+    "material-components-web": "^0.11.1",
+    "material-design-icons": "^3.0.1"
   }
 }

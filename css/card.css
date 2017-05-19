@@ -1,0 +1,6 @@
+.mdc-card__media-item.mdc-card__media-item--fit {
+  width: auto;
+  height: auto;
+  max-height: 240px;
+  margin: 0;
+}

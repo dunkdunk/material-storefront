@@ -4,12 +4,104 @@
     <title>Material Storefront</title>
     <link rel="stylesheet"
           href="node_modules/material-components-web/dist/material-components-web.css">
+    <link rel="stylesheet"
+          href="node_modules/material-design-icons/iconfont/material-icons.css">
+    <link rel="stylesheet"
+          href="css/styles.css">
   </head>
   <body>
-    <h2 class="mdc-typography--display2">Hello, Material Components!</h2>
-    <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
-      <input type="text" class="mdc-textfield__input" id="demo-input">
-      <label for="demo-input" class="mdc-textfield__label">Tell us how you feel!</label>
+    <header class="mdc-toolbar mdc-toolbar--fixed">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <span class="mdc-toolbar__title">Material Storefront</span>
+        </section>
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
+          <span class="cart">
+            <span>3 items</span> &mdash; <span>$101.26</span> <i class="material-icons">shopping_cart</i>
+          </span>
+        </section>
+      </div>
+    </header>
+    <div class="mdc-layout-grid shop-container">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3 mdc-layout-grid__cell--span-12-phone">
+        <h4>Categories</h4>
+        <ul class="mdc-list mdc-list--two-line">
+          <li class="mdc-list-item">
+            <span class="mdc-list-item__text">
+              Category name
+              <span class="mdc-list-item__text__secondary">X products</span>
+            </span>
+          </li>
+          <li class="mdc-list-item">
+            <span class="mdc-list-item__text">
+              Category name
+              <span class="mdc-list-item__text__secondary">X products</span>
+            </span>
+          </li>
+          <li class="mdc-list-item">
+            <span class="mdc-list-item__text">
+              Category name
+              <span class="mdc-list-item__text__secondary">X products</span>
+            </span>
+          </li>
+        </ul>
+        <hr class="mdc-list-divider">
+        <h4>Shop info</h4>
+        <ul class="mdc-list">
+          <li class="mdc-list-item">Shipping</li>
+          <li class="mdc-list-item">About us</li>
+          <li class="mdc-list-item">Contact</li>
+        </ul>
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9 mdc-layout-grid__cell--span-12-phone">
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__cell">
+            <div class="mdc-card">
+              <img class="mdc-card__media-item mdc-card__media-item--fit" src="https://unsplash.it/200/300/?random"></img>
+              <section class="mdc-card__primary">
+                <h1 class="mdc-card__title mdc-card__title--large">Product title</h1>
+                <h2 class="mdc-card__subtitle">$15.99</h2>
+              </section>
+            </div>
+          </div>
+          <div class="mdc-layout-grid__cell">
+            <div class="mdc-card">
+              <img class="mdc-card__media-item mdc-card__media-item--fit" src="https://unsplash.it/200/300/?random"></img>
+              <section class="mdc-card__primary">
+                <h1 class="mdc-card__title mdc-card__title--large">Product title</h1>
+                <h2 class="mdc-card__subtitle">$15.99</h2>
+              </section>
+            </div>
+          </div>
+          <div class="mdc-layout-grid__cell">
+            <div class="mdc-card">
+              <img class="mdc-card__media-item mdc-card__media-item--fit" src="https://unsplash.it/200/300/?random"></img>
+              <section class="mdc-card__primary">
+                <h1 class="mdc-card__title mdc-card__title--large">Product title</h1>
+                <h2 class="mdc-card__subtitle">$15.99</h2>
+              </section>
+            </div>
+          </div>
+          <div class="mdc-layout-grid__cell">
+            <div class="mdc-card">
+              <img class="mdc-card__media-item mdc-card__media-item--fit" src="https://unsplash.it/200/300/?random"></img>
+              <section class="mdc-card__primary">
+                <h1 class="mdc-card__title mdc-card__title--large">Product title</h1>
+                <h2 class="mdc-card__subtitle">$15.99</h2>
+              </section>
+            </div>
+          </div>
+          <div class="mdc-layout-grid__cell">
+            <div class="mdc-card">
+              <img class="mdc-card__media-item mdc-card__media-item--fit" src="https://unsplash.it/200/300/?random"></img>
+              <section class="mdc-card__primary">
+                <h1 class="mdc-card__title mdc-card__title--large">Product title</h1>
+                <h2 class="mdc-card__subtitle">$15.99</h2>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
     <script>mdc.autoInit()</script>
