@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const shopData = 'https://raw.githubusercontent.com/dunkdunk/material-storefront/feature/inserts-mock-data/data/shop.json';
+  const shopData = 'https://raw.githubusercontent.com/dunkdunk/material-storefront/master/data/shop.json';
 
   $.getJSON(shopData, function(data) {
     $('.mdc-toolbar__title').append(data.shop_info.name);
