@@ -9,40 +9,50 @@
       rel="stylesheet">
     <link rel="stylesheet"
           href="css/styles.css">
+    <script src="https://unpkg.com/vue@2.3.4"></script>
   </head>
   <body>
-    <header class="mdc-toolbar mdc-toolbar--fixed">
-      <div class="mdc-toolbar__row">
-        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-          <span class="mdc-toolbar__title"></span>
-        </section>
-        <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
-          <span class="cart">
-            <span>3 items</span> &mdash; <span>$101.26</span> <i class="material-icons">shopping_cart</i>
-          </span>
-        </section>
-      </div>
-    </header>
-    <div class="mdc-layout-grid shop-container">
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3 mdc-layout-grid__cell--span-12-phone">
-        <h4>Categories</h4>
-        <ul class="mdc-list mdc-list--two-line" id="categories">
-          <!-- Loaded dynamically via app.js -->
-        </ul>
-        <hr class="mdc-list-divider">
-        <h4>Shop info</h4>
-        <ul class="mdc-list" id="pages">
-          <!-- Loaded dynamically via app.js -->
-        </ul>
-      </div>
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9 mdc-layout-grid__cell--span-12-phone">
-        <div class="mdc-layout-grid" id="products">
-          <!-- Loaded dynamically via app.js -->
+    <div id="app">
+      <header class="mdc-toolbar mdc-toolbar--fixed">
+        <div class="mdc-toolbar__row">
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+            <store-info v-bind:info="shop_info"></store-info>
+          </section>
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
+            <cart v-bind:item-count="3" v-bind:total="101.26"></cart>
+          </section>
+        </div>
+      </header>
+      <div class="mdc-layout-grid shop-container">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3 mdc-layout-grid__cell--span-12-phone">
+          <h4>Filter by</h4>
+          <ul class="mdc-list mdc-list--two-line">
+            <category-item
+              v-for="category in categories"
+              v-bind:category="category"
+              v-bind:key="category.name">
+            </category-item>
+          </ul>
+          <ul class="mdc-list sidebar-list">
+            <page-item
+              v-for="page in pages"
+              v-bind:page="page"
+              v-bind:key="page.title">
+            </page-item>
+          </ul>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9 mdc-layout-grid__cell--span-12-phone">
+          <div class="mdc-layout-grid">
+            <product
+              v-for="product in products"
+              v-bind:product="product"
+              v-bind:key="product.title">
+            </product>
+          </div>
         </div>
       </div>
     </div>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./app.js"></script>
     <script>window.mdc.autoInit();</script>
   </body>
