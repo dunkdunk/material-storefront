@@ -10,13 +10,14 @@
     <link rel="stylesheet"
           href="css/styles.css">
     <script src="https://unpkg.com/vue@2.3.4"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div id="app">
       <header class="mdc-toolbar mdc-toolbar--fixed">
         <div class="mdc-toolbar__row">
           <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-            <store-info v-bind:info="shop_info"></store-info>
+            <store-info v-if="shop.shop_info" v-bind:shop-info="shop.shop_info"></store-info>
           </section>
           <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
             <cart v-bind:item-count="3" v-bind:total="101.26"></cart>
@@ -28,14 +29,14 @@
           <h4>Filter by</h4>
           <ul class="mdc-list mdc-list--two-line">
             <category-item
-              v-for="category in categories"
+              v-for="category in shop.categories"
               v-bind:category="category"
               v-bind:key="category.name">
             </category-item>
           </ul>
           <ul class="mdc-list sidebar-list">
             <page-item
-              v-for="page in pages"
+              v-for="page in shop.pages"
               v-bind:page="page"
               v-bind:key="page.title">
             </page-item>
@@ -44,7 +45,7 @@
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9 mdc-layout-grid__cell--span-12-phone">
           <div class="mdc-layout-grid">
             <product
-              v-for="product in products"
+              v-for="product in shop.products"
               v-bind:product="product"
               v-bind:key="product.title">
             </product>
